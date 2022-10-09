@@ -34,7 +34,7 @@ public class DeleteFileTask : AsyncTask{
 	public string dest_path = "";
 	public bool verbose = true;
 	public bool io_nice = true;
-	public bool use_rsync = false;
+	public bool use_rsync = true;
 
 	//private
 	private string source_path = ""; 
