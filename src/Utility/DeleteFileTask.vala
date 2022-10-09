@@ -113,7 +113,7 @@ public class DeleteFileTask : AsyncTask{
 			cmd += " '%s/'".printf(escape_single_quote(dest_path));
 		}
 		else{
-			cmd += "nice -10 ionice -c3 rm";
+			cmd += "nice -19 ionice -c3 rm";
 
 			if (verbose){
 				cmd += " -rfv";
