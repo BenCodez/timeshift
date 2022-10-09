@@ -316,7 +316,7 @@ namespace TeeJee.FileSystem{
 			return true;
 		}
 		
-		string cmd = "rm -rf '%s'".printf(escape_single_quote(dir_path));
+		string cmd = "ionice -c3 rm -rf '%s'".printf(escape_single_quote(dir_path));
 		
 		log_debug(cmd);
 		
@@ -541,7 +541,7 @@ namespace TeeJee.FileSystem{
 
 		/* Sync files with rsync */
 
-		string cmd = "rsync -avh";
+		string cmd = "ionice -c3 rsync -avh";
 		cmd += updateExisting ? "" : " --ignore-existing";
 		cmd += deleteExtra ? " --delete" : "";
 		cmd += " '%s'".printf(escape_single_quote(sourceDirectory) + "//");
